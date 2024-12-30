@@ -443,28 +443,36 @@ const ServiceCard1 = ({
   </Card>
 );
 
+
 const About = () => (
   <div className="min-h-screen">
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            About Green Axis Agro Solutions Limited
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A forward-thinking company dedicated to promoting regenerative
+          <div className="flex flex-col items-center space-y-6 mb-8">
+            <img
+              src="/carbon2.jpeg"
+              alt="Carbonerg Logo"
+              className="h-12 md:h-16 object-contain"
+            />
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 px-4">
+              About Green Axis Agro Solutions Limited
+            </h1>
+          </div>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+            Green Axis is a forward thinking Cabonerg program dedicated to promoting regenerative
             agriculture and environmental stewardship
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-            <p className="text-lg text-gray-600 mb-8">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
+          <div className="px-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Our Vision</h2>
+            <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8">
               To inspire global transformation towards a thriving, regenerative
               planet, where ecological integrity is prioritized, by championing
               sustainable practices, advocating for environmental stewardship
@@ -485,12 +493,13 @@ const About = () => (
               />
             </div>
           </div>
-          <TeamSection />
+          <TeamSection />   
         </div>
       </div>
     </section>
   </div>
 );
+
 
 const Impact = () => (
   <div className="min-h-screen py-24 bg-gradient-to-b from-green-50 to-white">

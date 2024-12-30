@@ -67,7 +67,8 @@ const ContactPage = () => {
                     <MapPin className="w-6 h-6 text-green-600 mt-1" />
                     <div>
                       <h3 className="font-semibold mb-1">Address</h3>
-                      <p className="text-gray-600">
+                                          <p className="text-gray-600">
+                                              Suites 232, 222 and 225,
                       2nd Floor Plot 58, Goldman Building,<br /> Opp. Mulungushi Conference Centre,<br />
                         Great East Road, Lusaka
                           Zambia

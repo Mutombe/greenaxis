@@ -88,7 +88,7 @@ const Footer = () => {
 
               <ContactInfo
                 Icon={MapPin}
-                content="2nd Floor Plot 58, Goldman Building - Opp. Mulungushi Conference Centre
+                content=" Suites 232, 222 and 225, 2nd Floor Plot 58, Goldman Building - Opp. Mulungushi Conference Centre
                         - Great East Road, Lusaka
                           Zambia"
               />
