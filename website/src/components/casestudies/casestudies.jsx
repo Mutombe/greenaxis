@@ -61,7 +61,7 @@ const Programs = () => {
           />
         </div>
 
-        <UpcomingWorkshops />
+        {/*<UpcomingWorkshops />*/}
       </div>
     </div>
   );
