@@ -71,11 +71,7 @@ const Navigation = () => {
                   paddingTop: "10px",
                 }}
               />
-              <img
-                src="/carbon2.jpeg"
-                alt="Green Axis"
-                className="h-8 w-auto sm:h-8 rounded-lg"
-              />
+
 
               {/*<span className="text-xl font-bold text-gray-900">Green Axis</span>*/}
             </NavLink>

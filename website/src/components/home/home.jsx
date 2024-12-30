@@ -55,7 +55,7 @@ const FeatureCard2 = ({ icon, title, description, backgroundUrl, link }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-green-900 via-green-900/70 to-green-900/40" />
     </div>
-    
+
     <CardContent className="relative h-full p-6 flex flex-col justify-end text-white">
       <div className="mb-4 transform transition-transform duration-500 group-hover:-translate-y-2">
         {icon}
@@ -79,10 +79,8 @@ const FeatureCard2 = ({ icon, title, description, backgroundUrl, link }) => (
   </Card>
 );
 
-
 const Home = () => {
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -118,7 +116,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-full flex items-center justify-center overflow-hidden">
         <motion.div
           style={{ opacity }}
           className="absolute inset-0 bg-gradient-to-br from-green-800 to-green-600"
@@ -126,7 +124,7 @@ const Home = () => {
           <img
             src="/reg.jpg"
             alt="Aerial view of regenerative farm"
-            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-40 mix-blend-overlay "
           />
         </motion.div>
 
@@ -137,35 +135,68 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-          <h1 className="font-bold tracking-tight leading-tight mb-6
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+                delay: 0.2,
+              }}
+              className=""
+            >
+              <br />
+              <br />
+              <div
+                className="relative  mx-auto flex items-center justify-center
+                 transform hover:scale-105 transition-transform duration-300 rounded-lg"
+              >
+                <img
+                  src="/carbon4.jpeg"
+                  alt="Green Axis Logo"
+                  className="object-contain rounded-full "
+                  style={{
+                    height: "300px",
+                    width: "300px",
+                    borderRadius: "20px",
+                  }}
+                />
+                <div
+                  className="absolute inset-0 rounded-full mix-blend-overlay"
+                />
+              </div>
+            </motion.div>
+            <h1
+              className="font-bold tracking-tight leading-tight mb-6
                        text-4xl sm:text-5xl md:text-6xl lg:text-7xl
                        px-2 sm:px-4 md:px-6
-                       text-balance">
-            <span className="inline-block mb-2 sm:mb-3">Green Axis</span>
-            <span className="inline-block mb-2 sm:mb-3">Agro Solutions</span>
-            <span className="inline-block">Limited</span>
-          </h1>
+                       text-balance"
+            >
+              <span className="inline-block mb-2 sm:mb-3">Green Axis</span>
+              <span className="inline-block mb-2 sm:mb-3">Agro Solutions</span>
+              <span className="inline-block">Limited</span>
+            </h1>
             <p className="text-xl md:text-2xl mb-8">
               Leading the transformation to regenerative agriculture for a
               sustainable future
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-2">
               <a
                 href="#learn-more"
-                              className="inline-flex items-center px-8 py-4 bg-white text-green-800 rounded-lg hover:bg-green-50 transition-colors"
-                              onClick={()=>navigate("/services")}
+                className="inline-flex items-center px-8 py-4 bg-white text-green-800 rounded-lg hover:bg-green-50 transition-colors"
+                onClick={() => navigate("/services")}
               >
                 Learn More
                 <ArrowRight className="ml-2" />
               </a>
 
-                          <a 
-            href="/gallery?autoplay=true" 
-            className="inline-flex items-center px-8 py-4 bg-green-700 text-white rounded-lg hover:bg-green-600 transition-colors"
-          >
-            Watch Video
-            <Play className="ml-2" />
-          </a>
+              <a
+                href="/gallery?autoplay=true"
+                className="inline-flex items-center px-8 py-4 bg-green-700 text-white rounded-lg hover:bg-green-600 transition-colors"
+              >
+                Watch Video
+                <Play className="ml-2" />
+              </a>
             </div>
           </motion.div>
         </div>
@@ -188,8 +219,7 @@ const Home = () => {
               icon={<Globe className="h-12 w-12" />}
               title="Global Impact"
               description="Join a network of farmers making a positive impact on climate change"
-            />
-            {" "}
+            />{" "}
             <FeatureCard
               icon={<BarChart3 className="h-12 w-12" />}
               title="Measurable Results"
@@ -360,10 +390,7 @@ const Services = () => (
           icon={<Globe className="h-12 w-12 text-green-600" />}
           title="Carbon Credits"
           description="Support in accessing carbon markets and certification"
-          features={[
-            "Market access facilitation",
-            "Documentation support",
-          ]}
+          features={["Market access facilitation", "Documentation support"]}
           backgroundImage="/reg7.webp"
           link="/resources"
         />
@@ -372,7 +399,14 @@ const Services = () => (
   </div>
 );
 
-const ServiceCard1 = ({ icon, title, description, features, backgroundImage, link }) => (
+const ServiceCard1 = ({
+  icon,
+  title,
+  description,
+  features,
+  backgroundImage,
+  link,
+}) => (
   <Card className="overflow-hidden group relative h-full transition-transform duration-300 hover:scale-105">
     <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/75 to-white/90 z-10" />
     <div
@@ -380,7 +414,9 @@ const ServiceCard1 = ({ icon, title, description, features, backgroundImage, lin
       style={{ backgroundImage: `url(${backgroundImage})` }}
     />
     <CardContent className="p-6 relative z-20">
-      <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">{icon}</div>
+      <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">
+        {icon}
+      </div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
       <ul className="space-y-2 mb-6">
@@ -406,7 +442,6 @@ const ServiceCard1 = ({ icon, title, description, features, backgroundImage, lin
     </CardContent>
   </Card>
 );
-
 
 const About = () => (
   <div className="min-h-screen">
@@ -476,7 +511,9 @@ const Impact = () => (
         <ImpactCard
           title="Environmental"
           metrics={[
-            {/*{ label: "Carbon Sequestered", value: "50,000+ tons" },*/},
+            {
+              /*{ label: "Carbon Sequestered", value: "50,000+ tons" },*/
+            },
             { label: "Soil Organic Matter Increase", value: "2.5%" },
             { label: "Water Retention Improved", value: "40%" },
           ]}
@@ -548,9 +585,12 @@ const TeamSection = () => (
   <div className="bg-green-50 p-8 rounded-2xl">
     <h3 className="text-2xl font-bold mb-6">Our Leadership</h3>
     <div className="space-y-6">
-      <TeamMember name="Adv. Nsikelelo Mafa Moyo 
+      <TeamMember
+        name="Adv. Nsikelelo Mafa Moyo 
 
-" role="Chief Executive Officer" />
+"
+        role="Chief Executive Officer"
+      />
       <TeamMember name="Mrs Christabel Mubita Moyo" role="Finance Director" />
       <TeamMember name="Mr Tawanda Shamuyarira " role="Board Chairperson" />
     </div>
