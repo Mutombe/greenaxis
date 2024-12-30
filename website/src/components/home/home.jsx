@@ -15,7 +15,6 @@ import React, { useEffect, useState } from "react";
 import { Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-
 const FeatureSection = () => (
   <section className="py-24 bg-white">
     <div className="max-w-7xl mx-auto px-4">
@@ -25,25 +24,28 @@ const FeatureSection = () => (
           title="Sustainable Practices"
           description="Implement proven regenerative techniques that restore soil health and boost productivity"
           backgroundUrl="/reg3.jpg"
+          link="/services"
         />
         <FeatureCard2
           icon={<Globe className="h-12 w-12 text-white" />}
           title="Global Impact"
           description="Join a network of farmers making a positive impact on climate change"
           backgroundUrl="/reg4.jpg"
+          link="/case-studies"
         />
         <FeatureCard2
           icon={<BarChart3 className="h-12 w-12 text-white" />}
           title="Measurable Results"
           description="Track your progress with advanced soil monitoring and carbon measurement"
           backgroundUrl="/reg5.jpg"
+          link="/case-studies"
         />
       </div>
     </div>
   </section>
 );
 
-const FeatureCard2 = ({ icon, title, description, backgroundUrl }) => (
+const FeatureCard2 = ({ icon, title, description, backgroundUrl, link }) => (
   <Card className="overflow-hidden group relative h-96">
     <div className="absolute inset-0">
       <img
@@ -53,7 +55,7 @@ const FeatureCard2 = ({ icon, title, description, backgroundUrl }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-green-900 via-green-900/70 to-green-900/40" />
     </div>
-
+    
     <CardContent className="relative h-full p-6 flex flex-col justify-end text-white">
       <div className="mb-4 transform transition-transform duration-500 group-hover:-translate-y-2">
         {icon}
@@ -61,12 +63,22 @@ const FeatureCard2 = ({ icon, title, description, backgroundUrl }) => (
       <h3 className="text-xl font-bold mb-2 transform transition-transform duration-500 group-hover:-translate-y-2">
         {title}
       </h3>
-      <p className="text-gray-100 transform transition-transform duration-500 group-hover:-translate-y-2">
+      <p className="text-gray-100 transform transition-transform duration-500 group-hover:-translate-y-2 mb-6">
         {description}
       </p>
+      <a
+        href={link}
+        className="inline-flex items-center text-white border border-white/30 rounded-lg px-4 py-2 
+                 transition-all duration-500 transform translate-y-8 opacity-0 group-hover:translate-y-0 
+                 group-hover:opacity-100 hover:bg-white hover:text-green-900 w-fit"
+      >
+        Learn More
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </a>
     </CardContent>
   </Card>
 );
+
 
 const Home = () => {
 
@@ -141,10 +153,14 @@ const Home = () => {
                 Learn More
                 <ArrowRight className="ml-2" />
               </a>
-              <button className="inline-flex items-center px-8 py-4 bg-green-700 text-white rounded-lg hover:bg-green-600 transition-colors">
-                Watch Video
-                <Play className="ml-2" />
-              </button>
+
+                          <a 
+            href="/gallery?autoplay=true" 
+            className="inline-flex items-center px-8 py-4 bg-green-700 text-white rounded-lg hover:bg-green-600 transition-colors"
+          >
+            Watch Video
+            <Play className="ml-2" />
+          </a>
             </div>
           </motion.div>
         </div>
@@ -192,7 +208,7 @@ const Home = () => {
                 <ImpactMetric
                   icon={<Users className="h-6 w-6 text-green-600" />}
                   label="Farmers Trained"
-                  value="2,500+"
+                  value="1,500+"
                   progress={85}
                 />
                 <ImpactMetric
@@ -296,8 +312,6 @@ const ImpactMetric = ({ icon, label, value, progress }) => (
   </div>
 );
 
-
-
 const Services = () => (
   <div className="min-h-screen py-24 bg-gray-50">
     <div className="max-w-7xl mx-auto px-4">
@@ -311,6 +325,7 @@ const Services = () => (
           Comprehensive solutions for regenerative agriculture implementation
         </p>
       </motion.div>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ServiceCard1
           icon={<Sprout className="h-12 w-12 text-green-600" />}
@@ -322,6 +337,7 @@ const Services = () => (
             "Online learning resources",
           ]}
           backgroundImage="/reg5.jpg"
+          link="/programs"
         />
         <ServiceCard1
           icon={<BarChart3 className="h-12 w-12 text-green-600" />}
@@ -333,27 +349,28 @@ const Services = () => (
             "Biodiversity assessment",
           ]}
           backgroundImage="/reg6.webp"
+          link="/case-studies"
         />
         <ServiceCard1
           icon={<Globe className="h-12 w-12 text-green-600" />}
           title="Carbon Credits"
           description="Support in accessing carbon markets and certification"
           features={[
-            "Carbon credit verification",
             "Market access facilitation",
             "Documentation support",
           ]}
           backgroundImage="/reg7.webp"
+          link="/resources"
         />
       </div>
     </div>
   </div>
 );
 
-const ServiceCard1 = ({ icon, title, description, features, backgroundImage }) => (
+const ServiceCard1 = ({ icon, title, description, features, backgroundImage, link }) => (
   <Card className="overflow-hidden group relative h-full transition-transform duration-300 hover:scale-105">
     <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/75 to-white/90 z-10" />
-    <div 
+    <div
       className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-60 transition-opacity duration-300"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     />
@@ -361,7 +378,7 @@ const ServiceCard1 = ({ icon, title, description, features, backgroundImage }) =
       <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">{icon}</div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
-      <ul className="space-y-2">
+      <ul className="space-y-2 mb-6">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center space-x-2">
             <CheckCircle2 className="h-5 w-5 text-green-600" />
@@ -369,6 +386,18 @@ const ServiceCard1 = ({ icon, title, description, features, backgroundImage }) =
           </li>
         ))}
       </ul>
+      <div className="relative">
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white/90 to-transparent -mt-12" />
+        <a
+          href={link}
+          className="relative flex items-center justify-center w-full px-6 py-3 bg-green-600 text-white rounded-lg 
+                   transition-all duration-300 transform hover:bg-green-700 hover:shadow-lg
+                   group-hover:translate-y-0 group-hover:opacity-100"
+        >
+          Learn More
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+      </div>
     </CardContent>
   </Card>
 );
@@ -450,9 +479,9 @@ const Impact = () => (
         <ImpactCard
           title="Social"
           metrics={[
-            { label: "Farmers Trained", value: "2,500+" },
+            { label: "Farmers Trained", value: "1200+" },
             { label: "Communities Impacted", value: "100+" },
-            { label: "Jobs Created", value: "500+" },
+            { label: "Jobs Created", value: "100+" },
           ]}
         />
         <ImpactCard
@@ -460,7 +489,7 @@ const Impact = () => (
           metrics={[
             { label: "Yield Increase", value: "35%" },
             { label: "Income Growth", value: "45%" },
-            { label: "Carbon Credits Generated", value: "$2M+" },
+            { label: "Carbon Credits Generated", value: "Not Yet" },
           ]}
         />
       </div>
@@ -514,9 +543,11 @@ const TeamSection = () => (
   <div className="bg-green-50 p-8 rounded-2xl">
     <h3 className="text-2xl font-bold mb-6">Our Leadership</h3>
     <div className="space-y-6">
-      <TeamMember name="Mrs. Christabel Mubita-Mafa" role="Director" />
-      <TeamMember name="Mr. Peter Chongo" role="Director" />
-      <TeamMember name="Mr. Vincent Josiah Mushore" role="Director" />
+      <TeamMember name="Adv. Nsikelelo Mafa Moyo 
+
+" role="Chief Executive Officer" />
+      <TeamMember name="Mrs Christabel Mubita Moyo" role="Finance Director" />
+      <TeamMember name="Mr Tawanda Shamuyarira " role="Board Chairperson" />
     </div>
   </div>
 );

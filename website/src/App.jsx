@@ -7,6 +7,7 @@ import {
   useLocation 
 } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Gallery } from './components/gallery/gallery';
 import { 
   Leaf,
   Menu,
@@ -72,6 +73,7 @@ const App = () => {
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/partnerships" element={<Partnerships />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

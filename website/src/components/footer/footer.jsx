@@ -77,22 +77,20 @@ const Footer = () => {
               />
               <ContactInfo
                 Icon={Phone}
-                content="+260 774 149 320"
-                href="tel:+260 774 149 320"
+                content="+260 972 808 600"
+                href="tel:+260 972 808 600"
               />
               <ContactInfo
                 Icon={Phone}
-                content="+260 973 041 771"
-                href="tel:+260 973 041 771"
+                content="+260 774 149 320"
+                href="tel:+260 774 149 320"
               />
 
               <ContactInfo
                 Icon={MapPin}
-                content="2
-nd Floor Plot 58, Goldman Building
-Opp. Mulungushi Conference Centre
-Great East Road, Lusaka
-Zambia"
+                content="2nd Floor Plot 58, Goldman Building - Opp. Mulungushi Conference Centre
+                        - Great East Road, Lusaka
+                          Zambia"
               />
             </div>
           </Card>

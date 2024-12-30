@@ -71,8 +71,19 @@ const Navigation = () => {
               to="/" 
               className="flex items-center space-x-2"
             >
-              <Leaf className="h-8 w-8 text-green-600" />
-              <span className="text-xl font-bold text-gray-900">Green Axis</span>
+                         
+              <img
+                src="/carbon.png"
+                alt="Green Axis"
+                className="h-20 w-auto sm:h-20"
+                          />
+                                        <img
+                src="/carbon2.jpeg"
+                alt="Green Axis"
+                className="h-8 w-auto sm:h-8 rounded-lg"
+              />
+            
+              {/*<span className="text-xl font-bold text-gray-900">Green Axis</span>*/}
             </NavLink>
           </div>
 

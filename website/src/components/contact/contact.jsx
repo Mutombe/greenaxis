@@ -47,7 +47,7 @@ const ContactPage = () => {
   };
 
   // Company location coordinates
-  const position = [51.505, -0.09];
+  const position = [-15.3927215,28.3150341,17];
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -80,7 +80,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
                       <p className="text-gray-600">
-                        +260 774 149 320 | +260 973 041 771
+                      +260 972 808 600 | +260 774 149 320
                       </p>
                     </div>
                   </div>

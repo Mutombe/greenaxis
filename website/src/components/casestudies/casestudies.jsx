@@ -150,16 +150,16 @@ const CaseStudies = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           <CaseStudyCard
-            title="Eastern Province Transformation"
+            title="Central Province, Mumbwa District"
             location="Zambia"
             results={{
               soilHealth: 45,
               yield: 35,
               carbon: 28
             }}
-            story="A community of 500 farmers transformed their degraded land through regenerative practices, achieving remarkable improvements in soil health and crop yields."
+            story="A community of 1200 farmers in 6 Chiefdoms transformed their degraded land through regenerative practices, achieving remarkable improvements in soil health and crop yields."
           />
-          <CaseStudyCard
+          {/*<CaseStudyCard
             title="Sustainable Cotton Initiative"
             location="Zimbabwe"
             results={{
@@ -168,7 +168,7 @@ const CaseStudies = () => {
               carbon: 32
             }}
             story="Cotton farmers implemented regenerative practices, reducing water usage while increasing yield and soil organic matter."
-          />
+          />*/}
         </div>
       </div>
     </div>
@@ -200,9 +200,9 @@ const Partnerships = () => {
                 focus: "Soil Health Research"
               },
               {
-                name: "Climate Research Center",
-                country: "South Africa",
-                focus: "Carbon Sequestration Studies"
+                name: "University of Zambia Dept of Agricultural Sciences, Soil Dept",
+                country: "Zambia",
+                focus: "Soil Health Research"
               }
             ]}
           />
@@ -215,13 +215,18 @@ const Partnerships = () => {
                 focus: "Policy Implementation"
               },
               {
-                name: "Environmental Protection Agency",
+                name: "District Agricultural Coordinator",
                 country: "Zimbabwe",
                 focus: "Environmental Standards"
-              }
+                },
+                {
+                    name: "Mumbwa District",
+                    country: "Zimbabwe",
+                    focus: "Environmental Standards"
+                }
             ]}
           />
-          <PartnershipCategory
+          {/*<PartnershipCategory
             title="Private Sector"
             partners={[
               {
@@ -235,7 +240,7 @@ const Partnerships = () => {
                 focus: "Carbon Credit Trading"
               }
             ]}
-          />
+          />*/}
         </div>
       </div>
     </div>
@@ -360,11 +365,11 @@ const CaseStudyCard = ({ title, location, results, story }) => (
           label="Yield Increase"
           value={results.yield}
         />
-        <ResultMetric
+        {/*<ResultMetric
           icon={<CircleDollarSign />}
           label="Carbon Credits Generated"
           value={results.carbon}
-        />
+        />*/}
       </div>
     </CardContent>
   </Card>
