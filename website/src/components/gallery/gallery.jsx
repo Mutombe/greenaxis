@@ -37,20 +37,20 @@ const Gallery = () => {
     {
       type: 'image',
       url: '/farm9.jpeg',
-      title: 'Aerial View of Farm',
-      description: 'Bird\'s eye view of our regenerative farming practices'
+      title: 'Zambia',
+      description: 'Farmers trained under Chief Moono Chiefdom'
     },
     {
       type: 'image',
       url: '/farm8.jpeg',
-      title: 'Soil Health Assessment',
-      description: 'Our team conducting soil analysis'
+      title: 'Zambia',
+      description: 'Farmer training at Chief Kabulwebulwe Chiefdom'
     },
     {
       type: 'image',
       url: '/farm7.jpeg',
-      title: 'Community Training',
-      description: 'Local farmers learning regenerative techniques'
+      title: 'Zambia',
+      description: 'Farmer training at Chief Kabulwebulwe Chiefdom'
     },
     // Add more media items as needed
   ];

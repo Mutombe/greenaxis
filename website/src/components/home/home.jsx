@@ -23,21 +23,21 @@ const FeatureSection = () => (
           icon={<Leaf className="h-12 w-12 text-white" />}
           title="Sustainable Practices"
           description="Implement proven regenerative techniques that restore soil health and boost productivity"
-          backgroundUrl="/reg3.jpg"
+          backgroundUrl="/farm1.jpeg"
           link="/services"
         />
         <FeatureCard2
           icon={<Globe className="h-12 w-12 text-white" />}
           title="Global Impact"
           description="Join a network of farmers making a positive impact on climate change"
-          backgroundUrl="/reg4.jpg"
+          backgroundUrl="/farm2.jpeg"
           link="/case-studies"
         />
         <FeatureCard2
           icon={<BarChart3 className="h-12 w-12 text-white" />}
           title="Measurable Results"
           description="Track your progress with advanced soil monitoring and carbon measurement"
-          backgroundUrl="/reg5.jpg"
+          backgroundUrl="/farm3.jpeg"
           link="/case-studies"
         />
       </div>
@@ -137,9 +137,14 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Cultivating Change
-            </h1>
+          <h1 className="font-bold tracking-tight leading-tight mb-6
+                       text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+                       px-2 sm:px-4 md:px-6
+                       text-balance">
+            <span className="inline-block mb-2 sm:mb-3">Green Axis</span>
+            <span className="inline-block mb-2 sm:mb-3">Agro Solutions</span>
+            <span className="inline-block">Limited</span>
+          </h1>
             <p className="text-xl md:text-2xl mb-8">
               Leading the transformation to regenerative agriculture for a
               sustainable future
@@ -213,16 +218,16 @@ const Home = () => {
                 />
                 <ImpactMetric
                   icon={<TreePine className="h-6 w-6 text-green-600" />}
-                  label="Hectares Regenerated"
-                  value="10,000+"
+                  label="Hectare under Regen Program"
+                  value="700,000"
                   progress={75}
                 />
-                <ImpactMetric
+                {/*<ImpactMetric
                   icon={<Sprout className="h-6 w-6 text-green-600" />}
                   label="Carbon Sequestered"
                   value="50,000 tons"
                   progress={90}
-                />
+                />*/}
               </div>
             </motion.div>
             <motion.div
@@ -240,7 +245,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">
@@ -284,7 +289,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 };
@@ -413,7 +418,7 @@ const About = () => (
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            About Green Axis Agro Solutions
+            About Green Axis Agro Solutions Limited
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A forward-thinking company dedicated to promoting regenerative
@@ -471,7 +476,7 @@ const Impact = () => (
         <ImpactCard
           title="Environmental"
           metrics={[
-            { label: "Carbon Sequestered", value: "50,000+ tons" },
+            {/*{ label: "Carbon Sequestered", value: "50,000+ tons" },*/},
             { label: "Soil Organic Matter Increase", value: "2.5%" },
             { label: "Water Retention Improved", value: "40%" },
           ]}

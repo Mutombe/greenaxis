@@ -210,20 +210,10 @@ const Partnerships = () => {
             title="Government Agencies"
             partners={[
               {
-                name: "Ministry of Agriculture",
-                country: "Malawi",
+                name: "Ministry of Agriculture, District Agricultural Coordinator, Mumbwa District",
+                country: "Zambia",
                 focus: "Policy Implementation"
               },
-              {
-                name: "District Agricultural Coordinator",
-                country: "Zimbabwe",
-                focus: "Environmental Standards"
-                },
-                {
-                    name: "Mumbwa District",
-                    country: "Zimbabwe",
-                    focus: "Environmental Standards"
-                }
             ]}
           />
           {/*<PartnershipCategory

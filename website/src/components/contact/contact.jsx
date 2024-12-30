@@ -68,9 +68,9 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Address</h3>
                       <p className="text-gray-600">
-                        2 nd Floor Plot 58, Goldman Building Opp. Mulungushi
-                        Conference Centre Great East Road, <br />
-                        Lusaka Zambia
+                      2nd Floor Plot 58, Goldman Building,<br /> Opp. Mulungushi Conference Centre,<br />
+                        Great East Road, Lusaka
+                          Zambia
                       </p>
                     </div>
                   </div>

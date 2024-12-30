@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { 
+import React, { useState, useEffect } from "react";
+import {
   BrowserRouter,
   Routes,
   Route,
   NavLink,
-  useLocation 
-} from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Leaf,
-  Menu,
-  X,
-  ChevronDown,
-  ExternalLink
-} from 'lucide-react';
-import { Toaster } from 'sonner';
-
+  useLocation,
+} from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Leaf, Menu, X, ChevronDown, ExternalLink } from "lucide-react";
+import { Toaster } from "sonner";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,8 +20,8 @@ const Navigation = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu on route change
@@ -37,59 +30,60 @@ const Navigation = () => {
   }, [location.pathname]);
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { 
-      label: 'Solutions',
+    { path: "/", label: "Home" },
+    {
+      label: "Solutions",
       children: [
-        { path: '/services', label: 'Services' },
-        { path: '/programs', label: 'Programs' },
-        { path: '/resources', label: 'Resources' }
-      ]
+        { path: "/services", label: "Services" },
+        { path: "/programs", label: "Programs" },
+        { path: "/resources", label: "Resources" },
+      ],
     },
-    { path: '/about', label: 'About' },
-    { path: '/impact', label: 'Impact' },
-    { 
-      label: 'Insights',
+    { path: "/about", label: "About" },
+    { path: "/impact", label: "Impact" },
+    {
+      label: "Insights",
       children: [
-        { path: '/case-studies', label: 'Case Studies' },
-        { path: '/partnerships', label: 'Partnerships' }
-      ]
+        { path: "/case-studies", label: "Case Studies" },
+        { path: "/partnerships", label: "Partnerships" },
+      ],
     },
-    { path: '/contact', label: 'Contact' }
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <NavLink 
-              to="/" 
-              className="flex items-center space-x-2"
-            >
-                         
+            <NavLink to="/" className="flex items-center space-x-2">
               <img
-                src="/carbon.png"
+                src="/carbon4.jpeg"
                 alt="Green Axis"
-                className="h-20 w-auto sm:h-20"
-                          />
-                                        <img
+                className="h-40 w-auto sm:h-20 mt-6"
+                style={{
+                  height: "100px",
+                  borderRadius: "10px",
+                  paddingTop: "10px",
+                }}
+              />
+              <img
                 src="/carbon2.jpeg"
                 alt="Green Axis"
                 className="h-8 w-auto sm:h-8 rounded-lg"
               />
-            
+
               {/*<span className="text-xl font-bold text-gray-900">Green Axis</span>*/}
             </NavLink>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
+            {navItems.map((item, index) =>
               item.children ? (
                 <DesktopDropdown key={index} item={item} />
               ) : (
@@ -98,17 +92,17 @@ const Navigation = () => {
                   to={item.path}
                   className={({ isActive }) => `
                     text-gray-700 hover:text-green-600 transition-colors relative
-                    ${isActive ? 'text-green-600' : ''}
+                    ${isActive ? "text-green-600" : ""}
                   `}
                 >
                   {item.label}
                 </NavLink>
               )
-            ))}
+            )}
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden flex items-center"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
@@ -120,15 +114,17 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       <AnimatePresence>
-        {isOpen && (
+              {isOpen && (
+                  
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-b overflow-hidden"
-          >
+                      >
+                          <br></br>
             <div className="px-4 py-2 space-y-1">
-              {navItems.map((item, index) => (
+              {navItems.map((item, index) =>
                 item.children ? (
                   <MobileDropdown key={index} item={item} />
                 ) : (
@@ -137,16 +133,17 @@ const Navigation = () => {
                     to={item.path}
                     className={({ isActive }) => `
                       block px-3 py-2 rounded-md text-base font-medium
-                      ${isActive ? 
-                        'bg-green-50 text-green-600' : 
-                        'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+                      ${
+                        isActive
+                          ? "bg-green-50 text-green-600"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
                       }
                     `}
                   >
                     {item.label}
                   </NavLink>
                 )
-              ))}
+              )}
             </div>
           </motion.div>
         )}
@@ -160,18 +157,18 @@ const DesktopDropdown = ({ item }) => {
   const location = useLocation();
 
   const isActiveRoute = item.children.some(
-    child => child.path === location.pathname
+    (child) => child.path === location.pathname
   );
 
   return (
-    <div 
+    <div
       className="relative"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
         className={`flex items-center space-x-1 ${
-          isActiveRoute ? 'text-green-600' : 'text-gray-700'
+          isActiveRoute ? "text-green-600" : "text-gray-700"
         } hover:text-green-600 transition-colors`}
       >
         <span>{item.label}</span>
@@ -193,9 +190,10 @@ const DesktopDropdown = ({ item }) => {
                   to={child.path}
                   className={({ isActive }) => `
                     block px-4 py-2 text-sm
-                    ${isActive ? 
-                      'bg-green-50 text-green-600' : 
-                      'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+                    ${
+                      isActive
+                        ? "bg-green-50 text-green-600"
+                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
                     }
                   `}
                 >
@@ -215,7 +213,7 @@ const MobileDropdown = ({ item }) => {
   const location = useLocation();
 
   const isActiveRoute = item.children.some(
-    child => child.path === location.pathname
+    (child) => child.path === location.pathname
   );
 
   return (
@@ -224,21 +222,26 @@ const MobileDropdown = ({ item }) => {
         onClick={() => setIsOpen(!isOpen)}
         className={`
           w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium
-          ${isActiveRoute ? 
-            'bg-green-50 text-green-600' : 
-            'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+          ${
+            isActiveRoute
+              ? "bg-green-50 text-green-600"
+              : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
           }
         `}
       >
         <span>{item.label}</span>
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`h-4 w-4 transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="ml-4 overflow-hidden"
           >
@@ -248,9 +251,10 @@ const MobileDropdown = ({ item }) => {
                 to={child.path}
                 className={({ isActive }) => `
                   block px-3 py-2 text-sm rounded-md
-                  ${isActive ? 
-                    'bg-green-50 text-green-600' : 
-                    'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+                  ${
+                    isActive
+                      ? "bg-green-50 text-green-600"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
                   }
                 `}
               >
