@@ -464,7 +464,7 @@ const About = () => (
             </h1>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-          Green Axis Agro Solutions Limited is operating the carboneg programm in Zambia that will be joining.
+          Green Axis Agro Solutions Limited is operating the carboneg program in Zambia.
             Our aim is to build up healthy and lifeful soil of today and days to come. By succesful application of regenerative agriculture practices, we are able to
             increase the amount organic matter in the soil measured by amount of carb dioxide within the specific area. We transfer the results into carborn
             credit certificates and we are therefore able to financially reward farmers to their effort. We work closely with companies in other sectors who
